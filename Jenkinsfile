@@ -41,8 +41,7 @@ pipeline{
         stage('Create Infrastructure for the App'){
             steps {
                 echo 'Creating Docker Swarm'
-                sh 'aws cloudformation create-stack --region ${AWS_REGION} --stack-name ${AWS_STACK_NAME} --capabilities CAPABILITY_IAM --template-body file://phonebook-cfn-template.yml 
-                --parameters ParameterKey=KeyPairName,ParameterValue=${CFN_KEYPAIR}'
+                sh 'aws cloudformation create-stack --region ${AWS_REGION} --stack-name ${AWS_STACK_NAME} --capabilities CAPABILITY_IAM --template-body file://phonebook-cfn-template.yml --parameters ParameterKey=KeyPairName,ParameterValue=${CFN_KEYPAIR}'
 
                 script {
                     while(true){
