@@ -3,7 +3,7 @@ pipeline{
     agent { label "master" }
 
     environment {
-        ECR_REGISTRY = "046402772087.dkr.ecr.us-east-1.amazonaws.com"
+        ECR_REGISTRY = "643455074350.dkr.ecr.us-east-1.amazonaws.com"
         APP_REPO_NAME = "ruslan-repo/phonebook-app"
         AWS_REGION = "us-east-1"
         AWS_STACK_NAME = "ruslan-Phonebook-App-${BUILD_NUMBER}"
